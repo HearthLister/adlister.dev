@@ -3,25 +3,31 @@ var imgBuilder = function (cards) {
     console.log(cards);
     $results.html('');
     cards.forEach(function (element, index) {
-        if (index % 5 == 0 && index != 0) {
+        if (index % 6 == 0 && index != 0) {
             if (element.playerClass != null) {
-                $results.append("<img data-value='" + element.cost + "' data='" + element.playerClass + "' class='col-md-2 card' style='padding: ; float: right; clear: right;' src=" + element.img + ' name="' + element.name + '">');
+                $results.append("<a href='#?add=this' class='card'><img data-value='" + element.cost + "' data='" + element.playerClass + "' class='col-md-2' style='padding: ; float: left; clear: left;' src=" + element.img + ' name="' + element.name + '"></a>');
             } else {
-                $results.append("<img data-value='" + element.cost + "' data='Neutral' class='col-md-2 card' style='padding: ; float: right; clear: right;' src=" + element.img + ' name="' + element.name + '">');
+                $results.append("<a href='#?add=this' class='card'><img data-value='" + element.cost + "' data='Neutral' class='col-md-2' style='padding: ; float: left; clear: left;' src=" + element.img + ' name="' + element.name + '"></a>');
             }
         } else {
             if (element.playerClass != null) {
-                $results.append("<img data-value='" + element.cost + "' data='" + element.playerClass + "' class='col-md-2 card' style='padding: ; float: right;' src=" + element.img + ' name="' + element.name + '">');
+                $results.append("<a href='#?add=this' class='card'><img data-value='" + element.cost + "' data='" + element.playerClass + "' class='col-md-2' style='padding: ; float: left;' src=" + element.img + ' name="' + element.name + '"></a>');
 
             } else {
-                $results.append("<img data-value='" + element.cost + "' data='Neutral' class='col-md-2 card' style='padding: ; float: right;' src=" + element.img + ' name="' + element.name + '">');
+                $results.append("<a href='#?add=this' class='card'><img data-value='" + element.cost + "' data='Neutral' class='col-md-2' style='padding: ; float: left;' src=" + element.img + ' name="' + element.name + '"></a>');
 
             }
 
         }
     });
-}
-$(document).ready(function () {
+    var $cards = $('.card');
+    $cards.click(function () {
+        console.log('worked');
+
+
+    });
+};
+// $(document).ready(function () {
     var $search = $('#df');
     $search.keyup(function (key) {
         clearTimeout($.data(this, 'timer'));
@@ -35,29 +41,44 @@ $(document).ready(function () {
         var $searchVal = $('#df').val();
         console.log($searchVal);
         searchEngine($searchVal);
-    }
-});
+    };
+// });
 ///////////////////pick a class function//////////
-var $deckEditor = $('#deckEditor');
-var $pickaclass = $('#pickaclass');
+var deckEditor = $('#deckEditor');
+var pickaclass = $('#pickaclass');
 var classes = ['Druid', 'Hunter', 'Mage', 'Paladin', 'Priest', 'Rogue', 'Shaman', 'Warlock', 'Warrior'];
-$(document).ready(function () {
+// var hero = $('.hero');
+// $(document).ready(function () {
 
 
-    $($pickaclass).onclick(function () {
-        $deckEditor.html('');
+    pickaclass.click(function () {
+        deckEditor.html('');
         classes.forEach(function (e, i) {
-            $deckEditor.append("<li><a>" + e + "</a></li>");
+            deckEditor.append("<li><a href='#' class='hero' data-value='" + e + "'>" + e + "</a></li>");
+        });
+       var hero = $('.hero');
+        hero.click(function(){
+            console.log('aything');
+            var chosenHero = $(this)[0].outerHTML;
+            deckEditor.html("<li>" + chosenHero + "</li>");
         });
     });
 
-});
+    // pickaclass.click(function () {
+    //     deckEditor.html('');
+    //     classes.forEach(function (e, i) {
+    //         deckEditor.append("<li><a href='#' class='hero' id='" + e + "'>" + e + "</a></li>");
+    //     });
+    // });
+
+
+
+// });
+
+
+
+
 
 
 ////////////////// deck editor populator//////
-var $cards = $('.card');
-$($cards).onclick(function (event) {
-
-
-});
 

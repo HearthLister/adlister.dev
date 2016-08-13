@@ -13,7 +13,7 @@
     border-radius: 4px;
 }
 .nav_container {
-    height: 100px;
+    height: 50px;
     /*background-color: orange;*/
     /*position: fixed;*/
     /*top: 0;*/
@@ -256,13 +256,13 @@ Custom login form Css
 /*=========deck builder css*/
 
 #sidebar-wrapper {
-    top: 0px;
+    top: -50px;
     left: -200px;
     width: 225px;
     background-color: rebeccapurple;
     color: white;
     position: fixed;
-    height: 100%;
+    height: 106%;
     z-index: 1;
 }
 .sidebar-nav {
@@ -275,7 +275,7 @@ Custom login form Css
 }
 .sidebar-nav li {
     text-indent: 20px;
-    line-height: 50px;
+    line-height: 25px;
 }
 .sidebar-nav li a {
     color: black;
