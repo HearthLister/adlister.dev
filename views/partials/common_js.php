@@ -81,38 +81,38 @@
     ////////search function called below//////
     searchEngine('');
 </script>
-<script>
-    //header resize on scroll
-
-
-
-    $(function(){
-        $('#header_nav').data('size','big');
-    });
-
-    $(window).scroll(function(){
-        if($(document).scrollTop() > 0)
-        {
-            if($('#header_nav').data('size') == 'big')
-            {
-                $('#header_nav').data('size','small');
-                $('#header_nav').stop().animate({
-                    height:'45px'
-                },600);
-            }
-        }
-        else
-        {
-            if($('#header_nav').data('size') == 'small')
-            {
-                $('#header_nav').data('size','big');
-                $('#header_nav').stop().animate({
-                    height:'100px'
-                },600);
-            }
-        }
-    });
-</script>
+<!--    //header resize on scroll-->
+<!--<script>-->
+<!---->
+<!---->
+<!---->
+<!--    $(function(){-->
+<!--        $('#header_nav').data('size','big');-->
+<!--    });-->
+<!---->
+<!--    $(window).scroll(function(){-->
+<!--        if($(document).scrollTop() > 0)-->
+<!--        {-->
+<!--            if($('#header_nav').data('size') == 'big')-->
+<!--            {-->
+<!--                $('#header_nav').data('size','small');-->
+<!--                $('#header_nav').stop().animate({-->
+<!--                    height:'45px'-->
+<!--                },600);-->
+<!--            }-->
+<!--        }-->
+<!--        else-->
+<!--        {-->
+<!--            if($('#header_nav').data('size') == 'small')-->
+<!--            {-->
+<!--                $('#header_nav').data('size','big');-->
+<!--                $('#header_nav').stop().animate({-->
+<!--                    height:'100px'-->
+<!--                },600);-->
+<!--            }-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
 <!--<script>-->
 <!--    // relevant attribute types: rarity, playerClass, cardSet, type, name, cardId, cost, race, mechanics.name/text.strposition() for spells with mechanics-->
 <!--    // attribute could be an array?????-->

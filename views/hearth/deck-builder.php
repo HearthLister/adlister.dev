@@ -40,7 +40,7 @@
         </div>
     </div>
 </div>
-<div id="results"></div>
+<div style="float: right;" class="col-md-10" id="results"></div>
 <!--<div style="background-color: black; height: 450px; width: 400px; position: fixed; right: 40px; top: 250px;" class="col-md-2">-->
 <!--    <h1>Deck Editor</h1>-->
 <!--</div>-->
