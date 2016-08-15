@@ -22,18 +22,25 @@
     <div class="row">
         <div id="custom-search-input">
             <div class="input-group col-md-10 col-md-offset-2">
+                <form method="post">
+                    <div class="input-group col-md-6">
+                        <input type="text" name="deckname">
+                        <input type="submit" value="Create Deck" id="createDeck,">
+                    </div>
+                </form>
                 <form method="get">
-                    <input type="text" class="search-query form-control" id="df" placeholder="Search" />
-                    <div id="checkboxes" class="input-group col-md-8 col-md-offset-3">
-                        <input type="checkbox" value="rarity">Rarity</input>
-                        <input type="checkbox" value="playerClass">Class</input>
-                        <input type="checkbox" value="cardSet">Set</input>
-                        <input type="checkbox" value="type">Type</input>
-                        <input type="checkbox" value="name">Name</input>
-                        <input type="checkbox" value="race">Race</input>
-                        <input type="checkbox" value="mechanics">Mechanic</input>
-                        <input type="checkbox" value="cost">Cost</input>
-                        <input type="checkbox" value="text">Text</input>
+                    <input type="text" class="search-query form-control" id="df" placeholder="Search">
+                    <div id="checkboxes" class="input-group col-md-6 col-md-offset-3">
+                        <label><input type="checkbox" value="rarity">Rarity</label>
+                        <label><input type="checkbox" value="playerClass">Class</label>
+                        <label><input type="checkbox" value="cardSet">Set</label>
+                        <label><input type="checkbox" value="type">Type</label>
+                        <label><input type="checkbox" value="name">Name</label>
+                        <label><input type="checkbox" value="race">Race</label>
+                        <label><input type="checkbox" value="mechanics">Mechanic</label>
+                        <label><input type="checkbox" value="cost">Cost</label>
+                        <label><input type="checkbox" value="text">Text</label>
+                        <?php var_dump($_REQUEST); ?>
                     </div>
                 </form>
             </div>

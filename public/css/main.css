@@ -262,7 +262,7 @@ Custom login form Css
     background-color: rebeccapurple;
     color: white;
     position: fixed;
-    height: 106%;
+    height: 110%;
     z-index: 1;
 }
 .sidebar-nav {
@@ -275,7 +275,7 @@ Custom login form Css
 }
 .sidebar-nav li {
     text-indent: 20px;
-    line-height: 25px;
+    line-height: 21px;
 }
 .sidebar-nav li a {
     color: black;

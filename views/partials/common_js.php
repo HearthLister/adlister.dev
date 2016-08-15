@@ -23,48 +23,9 @@
     });
 </script>
 <script>
-//    var attributes = ['rarity', 'playerClass', 'cardSet', 'type', 'name', 'race', 'mechanics', 'cost', 'text'];
-    var attributes = ['name'];
-    var loopThroughCards = function(set, search, cardsArray) {
-        set.forEach(function(card){
-            checkCardAgainstInput(card, search, cardsArray);
-        });
-    };
-    var checkCardAgainstInput = function (card, search, cardsArray) {
-        if (card.collectible === true && card.type.toLowerCase() != 'hero') {
-            if(search == '') {
-                cardsArray.push(card);
-            }else{
-            attributes.forEach(function(attribute) {
-                var currentAttribute = card[attribute];
-                if (currentAttribute != null && attribute === 'mechanics'){
-                    currentAttribute.forEach(function (mechanic) {
 
-                        if(mechanic.name.toLowerCase() == search.toLowerCase()){
-                            cardsArray.push(card);
-                        }
-                    })
-                } else if (currentAttribute != null && attribute === 'text' ){
-                    if(currentAttribute.toLowerCase().indexOf(search.toLowerCase()) != -1 && Array.isArray(search.match(/[a-z]/i))){
-                        cardsArray.push(card);
-                    }
-                } else if (attribute == 'cost') {
-                    if(currentAttribute == parseInt(search) && Array.isArray(search.match(/[a-z]/i)) != true){
-                        cardsArray.push(card);
-                    }
-                } else if (currentAttribute != null) {
-                    if(currentAttribute.toLowerCase().indexOf(search.toLowerCase()) != -1){
-                        cardsArray.push(card);
-                    }
-                }
-            })
-            }
-//            cardsArray.forEach(function(e, i){
-//                cards.
-//            })
-            return cardsArray;
-        }
-    };
+    var attributes = ['name', 'cost'];
+//        var attributes = ['name'];
     var searchEngine = function(search){
         $.get('/cards.json', {
             data: {}
@@ -73,11 +34,38 @@
             var sets = Object.keys(data);
             for (var i = 0; i < sets.length; i++) {
                 var setName = sets[i];
-               loopThroughCards(data[setName], search, cards);
+//                console.log(data[setName]);
+                data[setName].forEach(function(card, index){
+                    checkCardAgainstInput(card, search, cards);
+                });
+//                loopThroughCards(data[setName], search, cards);
             }
             imgBuilder(cards);
         });
     };
+//  var loopThroughCards = function(set, search, cards) {
+//        set.forEach(function(card){
+//        checkCardAgainstInput(card, search, cards);
+//        });
+//  };
+    var checkCardAgainstInput = function (card, search, cards) {
+        if (card.collectible === true && card.type.toLowerCase() != 'hero') {
+            attributes.forEach(function(attribute) {
+                var currentAttribute = card[attribute];
+                if (currentAttribute != null && attribute == 'cost') {
+                    if(currentAttribute == parseInt(search) && Array.isArray(search.match(/[a-z]/i)) != true){
+                        cards.push(card);
+                    }
+                } else if (currentAttribute != null) {
+                    if(currentAttribute.toLowerCase().indexOf(search.toLowerCase()) != -1){
+                        cards.push(card);
+                    }
+                }
+            });
+            }
+            return cards;
+    };
+
     ////////search function called below//////
     searchEngine('');
 </script>
