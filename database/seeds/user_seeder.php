@@ -1,31 +1,35 @@
 <?php
 
-require_once __DIR__ . '/../../models/Deck.php';
+require_once __DIR__ . '/../../models/User.php';
 
-$deck = new Deck;
-$deck->deck_name = 'Zoo';
-$deck->user_id = 1;
-$deck->class_id = 8;
-$deck->save();
-var_dump($deck);
+$user = new User;
+$user->NAME = 'Rob';
+$user->email = 'rob@rob.com';
+$user->username = 'RobK';
+$user->PASSWORD = 'codeup';
+$user->save();
+var_dump($user);
 
-$deck = new Deck;
-$deck->deck_name = 'Dragon Warrior';
-$deck->user_id = 2;
-$deck->class_id = 9;
-$deck->save();
-var_dump($deck);
+$user = new User;
+$user->NAME = 'TJ';
+$user->email = 'tj@tj.com';
+$user->username = 'TJ';
+$user->PASSWORD = 'codeup';
+$user->save();
+var_dump($user);
 
-$deck = new Deck;
-$deck->deck_name = 'N\'Zoth Priest';
-$deck->user_id = 3;
-$deck->class_id = 5;
-$deck->save();
-var_dump($deck);
+$user = new User;
+$user->NAME = 'Craig';
+$user->email = 'craig@craig.com';
+$user->username = 'Craig';
+$user->PASSWORD = 'codeup';
+$user->save();
+var_dump($user);
 
-$deck = new Deck;
-$deck->deck_name = 'Aggro Shaman';
-$deck->user_id = 4;
-$deck->class_id = 7;
-$deck->save();
-var_dump($deck);
+$user = new User;
+$user->NAME = 'Anthony';
+$user->email = 'ant@ant.com';
+$user->username = 'Anthony';
+$user->PASSWORD = 'codeup';
+$user->save();
+var_dump($user);

@@ -1,20 +1,21 @@
 var $results = $('#results');
+var deckEditorArray = [];
 var imgBuilder = function (cards) {
     console.log(cards);
     $results.html('');
     cards.forEach(function (element, index) {
         if (index % 6 == 0 && index != 0) {
             if (element.playerClass != null) {
-                $results.append("<a href='#?add=this' class='card'><img data-value='" + element.cost + "' data='" + element.playerClass + "' class='col-md-2' style='padding: ; float: left; clear: left;' src=" + element.img + ' name="' + element.name + '"></a>');
+                $results.append('<a href="#?add=this"' + ' name="' + element.name + '" class="card" data-value="' + element.cost + '"><img class="col-md-2" style="padding: ; float: left; clear: left;" src=' + element.img +'></a>');
             } else {
-                $results.append("<a href='#?add=this' class='card'><img data-value='" + element.cost + "' data='Neutral' class='col-md-2' style='padding: ; float: left; clear: left;' src=" + element.img + ' name="' + element.name + '"></a>');
+                $results.append('<a href="#?add=this"' + ' name="' + element.name + '" class="card" data-value="' + element.cost + '"><img class="col-md-2" style="padding: ; float: left; clear: left;" src=' + element.img +'></a>');
             }
         } else {
             if (element.playerClass != null) {
-                $results.append("<a href='#?add=this' class='card'><img data-value='" + element.cost + "' data='" + element.playerClass + "' class='col-md-2' style='padding: ; float: left;' src=" + element.img + ' name="' + element.name + '"></a>');
+                $results.append('<a href="#?add=this"' + ' name="' + element.name + '" class="card" data-value="' + element.cost + '"><img class="col-md-2" style="padding: ; float: left;" src=' + element.img +'></a>');
 
             } else {
-                $results.append("<a href='#?add=this' class='card'><img data-value='" + element.cost + "' data='Neutral' class='col-md-2' style='padding: ; float: left;' src=" + element.img + ' name="' + element.name + '"></a>');
+                $results.append('<a href="#?add=this"' + ' name="' + element.name + '" class="card" data-value="' + element.cost + '"><img class="col-md-2" style="padding: ; float: left;" src=' + element.img +'></a>');
 
             }
 
@@ -22,7 +23,11 @@ var imgBuilder = function (cards) {
     });
     var $cards = $('.card');
     $cards.click(function () {
-        console.log('worked');
+        var deckEditor = $('#deckEditor');
+        deckEditor.append("<li><a>" + $(this).data('value') + " " + this.name + "</a></li>");
+        // deckEditorArray.push(this.name);
+        // console.log(deckEditorArray);
+        // console.log($(this).data('value'));
 
 
     });
