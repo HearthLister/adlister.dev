@@ -89,11 +89,10 @@ pickaclass.click(function () {
 ///////create a deck function//////////
 var createButton = $('#createDeck');
 createButton.click(function(){
-   // if(deckEditorArray.length == 30){
-       console.log('workd');
-       deckList = deckEditorArray.join(',');
-       $.post('index.php',{deckList: deckList});
-       console.log(deckEditorArray);
-   // }
+    // if(deckEditorArray.length == 30){
+    console.log('workd');
+    deckList = deckEditorArray.join(',');
+    $.post('index.php',{deckList: deckList});
+    console.log(deckEditorArray);
+    // }
 });
-

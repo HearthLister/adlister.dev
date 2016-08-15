@@ -20,7 +20,11 @@ class Auth
 
 		// gets instance of user model by searching with username or email($username)
 		$user = User::findByUsernameOrEmail($username);
+<<<<<<< HEAD
 //        var_dump($user);
+=======
+
+>>>>>>> tjpr
 
 		// makes sure the instance returned is not empty
 		if ($user == null)
@@ -31,9 +35,13 @@ class Auth
 		}
 
 		// checks password submitted against hashed password
+<<<<<<< HEAD
 //        var_dump($password);
 //        var_dump($user->PASSWORD);
 //        var_dump(password_verify($password, $user->PASSWORD));
+=======
+
+>>>>>>> tjpr
 		if (password_verify($password, $user->PASSWORD))
 		{
 //		    var_dump('workd');
